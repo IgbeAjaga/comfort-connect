@@ -16,8 +16,22 @@ class PersonEmotionSerializer(serializers.ModelSerializer):
 
 
 class PersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+        fields = '__all__'
+
+
+class PersonEmotionViewSerializer(serializers.ModelSerializer):
+    emotion = EmotionSerializer(read_only=True)
+
+    class Meta:
+        model = PersonEmotion
+        fields = '__all__'
+
+
+class PersonViewSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
-    emotions = PersonEmotionSerializer(many=True, read_only=True)
+    emotions = EmotionSerializer(many=True, read_only=True)
 
     class Meta:
         model = Person
