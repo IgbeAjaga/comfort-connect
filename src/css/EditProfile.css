@@ -1,0 +1,33 @@
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .profile-header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    font-size: 24px;
+  }
+  
+  .profile-avatar img {
+    border: 5px solid #007BFF;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .profile-details h2 {
+    font-size: 20px;
+  }
+  
+  .profile-bio h2 {
+    font-size: 20px;
+  }
+  
+  /* You can add more styles to further customize the profile page */
+  

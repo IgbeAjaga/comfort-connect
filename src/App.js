@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+// App.js
+import React from 'react';
+import Header from './components/Header';
+import EditProfile from './components/EditProfile';
+import Logout from './components/Logout';
+import Sidebar from './components/Sidebar';
+import RecommendedPosts from './components/RecommendedPosts';
+import ConnectlovedOne from './components/ConnectlovedOne';
+import ConnectionStatus from './components/ConnectionStatus';
+import ConnectionRemove from './components/ConnectionRemove';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Header />
+        <div className='app_page'>
+          <Sidebar>
+            <Routes>
+              <Route path="/" element={<RecommendedPosts />} />
+              <Route path="/add-new" element={<ConnectlovedOne />} />
+              <Route path="/remove-connection" element={<ConnectionRemove />} />
+              <Route path="/connection-status" element={<ConnectionStatus />} />
+              <Route path="/edit-profile" element={<EditProfile />} />
+              <Route path="/Logout" element={<Logout />} />
+            </Routes>
+            </Sidebar>
+            </div>
+      </div>    
   );
 }
 

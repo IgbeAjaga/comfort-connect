@@ -1,0 +1,68 @@
+.recommendedVideos{
+    flex: 0.8;
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    padding-bottom: 0;
+}
+.recommendedVideos > h2{
+    margin-left: 5px;
+    margin-bottom: 20px;
+    color: #02270f;
+}
+.recommendedVideos_videos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* styles for the popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items:self-end;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Add styles for the "Read More" button */
+.postCard_text button {
+    background-color: #02270f; /* Initial green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+  }
+  
+  .postCard_text button:hover {
+    background-color: red; /* Change to red on hover */
+    color: #02270f;
+  }
+
+  .popup-content button {
+    background-color: red; /* Default red background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+    width: 100px;
+    }
+  
+  .popup-content button:hover {
+    background-color: #02270f; /* Change to green on hover */
+  }
+  

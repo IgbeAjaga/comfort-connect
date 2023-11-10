@@ -1,0 +1,87 @@
+/* EmotionPopup.css */
+
+/* Styling for the modal overlay */
+.ReactModal__Overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for the modal content */
+.ReactModal__Content {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  maxWidth: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Styling for the heading */
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the form and radio buttons */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.response-option {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* Styling for the buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+}
+
+/* Styling for the 'Submit' button */
+button.submit-button {
+  background-color: #02270f;
+  color: #fff;
+}
+
+button.submit-button:hover {
+  background-color: red;
+}
+
+/* Styling for the 'Cancel' button */
+button.cancel-button {
+  background-color: #fff;
+  color: #02270f;
+}
+
+button.cancel-button:hover {
+  background-color: #eee;
+}

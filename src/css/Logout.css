@@ -1,0 +1,52 @@
+/* Logout.css */
+
+.logout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+}
+
+.logout-button,
+.cancel-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button {
+  background-color: #e74c3c; /* Use your preferred color */
+  color: #fff;
+}
+
+.logout-button:hover {
+  background-color: #c0392b; /* Use a darker shade of your preferred color */
+}
+
+.cancel-button {
+  background-color: #3498db; /* Use your preferred cancel button color */
+  color: #fff;
+}
+
+.cancel-button:hover {
+  background-color: #2980b9; /* Use a darker shade of your preferred color */
+}

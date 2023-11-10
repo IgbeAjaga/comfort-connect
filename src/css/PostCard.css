@@ -1,0 +1,28 @@
+.postCard{
+    width: 270px;
+    margin-bottom: 40px;
+}
+.postCard_thumbnail{
+    height: 140px;
+    width: 250px;
+}
+.postCard_info{
+    display: flex;
+    margin-top: 10px;
+    padding-right: 30px;
+}
+.postCard_text{
+    margin-left: 15px;
+}
+.postCard_text > h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.postCard_text > p {
+    font-size: 14px;
+    color: gray;
+}
+.postCard_avatar{
+    height: 30px !important;
+    width: 30px !important;
+}

@@ -1,0 +1,94 @@
+.signup-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.signup-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-container select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0074b5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-container button:hover {
+  background-color: #005b91;
+}
+
+.signup-container p {
+  margin-top: 10px;
+}
+
+.success-message {
+  color: #2ecc71;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #0074b5;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Optional styling for different steps (1-4) */
+/* Step 2 - OTP */
+.signup-container form:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Step 3 - Username and Password */
+.signup-container form:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Step 4 - First name, Last name, etc. */
+.signup-container form:nth-child(4) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

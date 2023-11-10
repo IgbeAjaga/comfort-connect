@@ -1,0 +1,40 @@
+.dropDownProfile{
+    position: absolute;
+    top: 4.5rem;
+    right: 1.5rem;
+    width: 120px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid gray;
+}
+.dropDownProfile::before{
+    position: absolute;
+    top: -0.7rem;
+    right: 1.1rem;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    content: '';
+    transform: rotate(45deg);
+    background-color: white;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+.profile-link {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+  }
+  
+  .profile-link:hover {
+    background-color: #f2f2f2;
+    color: #000; /* Change link color on hover */
+  }
+  
+  .profile-link:active {
+    background-color: #ddd; /* Change background color on active state */
+    color: #000; /* Change link color on active state */
+  }
