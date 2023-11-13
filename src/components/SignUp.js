@@ -6,16 +6,15 @@ function SignUp() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     step: 1,
-    phone: '',
-    otp: '',
+    email: '',
     username: '',
     password: '',
     confirmPassword: '',
     firstName: '',
     lastName: '',
+    phone: '',
     height: '',
     complexion: '',
-    dob: '',
     maritalStatus: '',
   });
   const [successMessage, setSuccessMessage] = useState('');
@@ -44,8 +43,7 @@ function SignUp() {
       setSuccessMessage('Thank you for Signing up!!!');
       setFormData({
         step: 1,
-        phone: '',
-        otp: '',
+        email: '',
         username: '',
         password: '',
         confirmPassword: '',
@@ -53,13 +51,14 @@ function SignUp() {
         lastName: '',
         height: '',
         complexion: '',
-        dob: '',
+        phone: '',
         maritalStatus: '',
+        hobby: '',
       });
     }, 2000);
 
     // After successful signup, you can redirect to another page
-    navigate.push('/Login');
+    navigate.push('/LoginPage');
   };
 
   return (
@@ -68,31 +67,13 @@ function SignUp() {
       {formData.step === 1 && (
         <form onSubmit={handleNext}>
           <input
-            type="tel"
-            name="phone"
-            placeholder="+2348133456787"
-            value={formData.phone}
+            type="email"
+            name="email"
+            placeholder="igbe@email.com"
+            value={formData.email}
             onChange={handleChange}
             required
           />
-          <button type="submit">Next</button>
-        </form>
-      )}
-      {formData.step === 2 && (
-        <form onSubmit={handleNext}>
-          <input
-            type="text"
-            name="otp"
-            placeholder="OTP"
-            value={formData.otp}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">Next</button>
-        </form>
-      )}
-      {formData.step === 3 && (
-        <form onSubmit={handleNext}>
           <input
             type="text"
             name="username"
@@ -120,7 +101,8 @@ function SignUp() {
           <button type="submit">Next</button>
         </form>
       )}
-      {formData.step === 4 && (
+      
+      {formData.step === 2 && (
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -155,10 +137,10 @@ function SignUp() {
             required
           />
           <input
-            type="date"
-            name="dob"
-            placeholder="Date of Birth"
-            value={formData.dob}
+            type="tel"
+            name="phone"
+            placeholder="+2348133456787"
+            value={formData.phone}
             onChange={handleChange}
             required
           />
@@ -175,12 +157,20 @@ function SignUp() {
             <option value="separated">Separated</option>
             <option value="divorced">Divorced</option>
           </select>
+          <input
+            type="text"
+            name="hobby"
+            placeholder="e.g dancing"
+            value={formData.hobby}
+            onChange={handleChange}
+            required
+          />
           <button type="submit">Sign Up</button>
         </form>
       )}
       {successMessage && <p className="success-message">{successMessage}</p>}
       <p>
-        Already have an account? <Link to="/Login">Log in</Link>
+        Already have an account? <Link to="/LoginPage">Log in</Link>
       </p>
     </div>
   );

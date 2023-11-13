@@ -41,7 +41,7 @@
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    background-color: #417454;
+    background-color:  #04361d;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -49,7 +49,7 @@
   }
   
   button:hover {
-    background-color: #f6f7f8;
-    color: #417454;
+    background-color: red;
+    color: #fff;
   }
   

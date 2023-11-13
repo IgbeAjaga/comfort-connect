@@ -4,10 +4,11 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
-  margin: 0 auto;
+  width: 300px;  
   margin-top: 50px;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;  
+  margin-left: 100px;
+
 }
 
 .signup-container h2 {
@@ -40,7 +41,7 @@
 .signup-container button {
   width: 100%;
   padding: 10px;
-  background-color: #0074b5;
+  background-color: #04361d;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -49,7 +50,7 @@
 }
 
 .signup-container button:hover {
-  background-color: #005b91;
+  background-color: red;
 }
 
 .signup-container p {

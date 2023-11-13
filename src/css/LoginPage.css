@@ -1,55 +1,69 @@
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+  margin-left: 100px;
+
 }
 
-h2 {
+.login-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-input {
+.login-form label {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.login-form input {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px;
 }
 
-button {
-  background-color: #007BFF;
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #04361d;
   color: #fff;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #0056b3;
+.login-button:hover {
+  background-color:red;
+  color: #fff;
+}
+.p{
+  margin-top: 15px;
 }
 
-p {
-  margin-top: 20px;
-}
-
-a {
+/* Add spacing for the "Create New Account" link */
+.create-account-link {
+  margin-top: 15px;
+  display: block; /* Ensure it takes up the full width available */
+  color: #04361d;
   text-decoration: none;
-  color: #007BFF;
 }
 
-a:hover {
+.create-account-link:hover {
   text-decoration: underline;
 }
