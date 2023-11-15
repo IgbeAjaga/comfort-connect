@@ -6,11 +6,38 @@ function ConnectlovedOne({ onClose, onConnect }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
-  const handleConnect = () => {
+  const handleConnect = async () => {
     // Perform any necessary validation here before connecting the loved one
     if (phone && firstName && lastName) {
       // Call a function (e.g., onConnect) to connect the loved one
-      onConnect({ phone, firstName, lastName });
+      //onConnect({ phone, firstName, lastName });
+      const loved = {
+        "phone": phone,
+        "first_name": firstName,
+        "last_name": lastName
+      }
+      try {
+        const respone = await fetch(
+            "http://54.236.43.172:5000/api/person/connect_to/",
+            {
+              method: "POST",
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(loved)
+            }
+        );
+        if (!respone.ok) {
+          alert("Didn't connect to the loved one! please try again...")
+        }
+        else
+        {
+          alert('Connected Successfully to the loved one!');
+          onClose();
+        }
+      } catch (error) {
+        alert("An error occured while connecting to the loved one");
+      }
     }
   };
 
