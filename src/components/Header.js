@@ -68,7 +68,7 @@ function Header() {
   return (
     <div className='header'>
       <div className='header_left'>
-        <Link to='/'>
+        <Link to='/home'>
           <img
             className='header_logo'
             src='https://res.cloudinary.com/dpozc9dye/image/upload/v1697761695/Comfort_connect_logo_1_lwrjyo.png'

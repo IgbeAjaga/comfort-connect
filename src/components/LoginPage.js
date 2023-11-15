@@ -9,6 +9,10 @@ function LoginPage() {
   const handleLogin = () => {
     // Implement your login logic here
     console.log('Logging in with:', { username, password });
+
+    try {
+      const response = await fetch('http://localhost:8000:/token')
+    }
   };
 
   return (

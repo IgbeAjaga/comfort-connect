@@ -4,6 +4,7 @@ import '../css/RecommendedPosts.css';
 
 function RecommendedPosts() {
   // Define the maximum number of characters to display initially
+
   const maxContentLength = 50;
 
   // Use state to manage which PostCard's content to display in the popup
