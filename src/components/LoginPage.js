@@ -1,17 +1,43 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import {Link, useNavigate} from 'react-router-dom'; // Import Link from react-router-dom
 import '../css/LoginPage.css'; // Import the corresponding CSS file
 
-function LoginPage() {
+const LoginPage = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // Implement your login logic here
     console.log('Logging in with:', { username, password });
-
+    const user = {
+      "username": username,
+      "email": username,
+      "password": password
+    }
     try {
-      const response = await fetch('http://localhost:8000:/token')
+      const response = await fetch(
+        'http://54.236.43.172:5000/api/token/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(user)
+        }
+      );
+
+      if (!response.ok) {
+        alert('Username or password wrong');
+      } else {
+        const data = await response.json();
+        console.log(data)
+        localStorage.setItem('token', data.token);
+        navigate('/home');
+      }
+    } catch (error) {
+      alert(error);
+      alert('Something went wrong, fetching the API');
     }
   };
 
@@ -53,6 +79,6 @@ function LoginPage() {
       </p>
     </div>
   );
-}
+};
 
 export default LoginPage;
