@@ -1,2 +1,2 @@
 # comfort-connect
-A mental health app
+This is CormfortConnect, a mental health app
