@@ -2,3 +2,5 @@
 __pychache__
 *.pyc
 *.idea
+/cc-api/db.sqlite3
+
