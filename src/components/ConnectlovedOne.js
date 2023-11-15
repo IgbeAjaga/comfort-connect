@@ -22,11 +22,13 @@ function ConnectlovedOne({ onClose, onConnect }) {
             {
               method: "POST",
               headers: {
+                'Authorization': `Token ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify(loved)
             }
         );
+        console.log(respone.status)
         if (!respone.ok) {
           alert("Didn't connect to the loved one! please try again...")
         }
