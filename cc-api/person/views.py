@@ -64,9 +64,9 @@ class PersonConnectView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     @staticmethod
-    def post(request, pk=None):
+    def post(request):
         try:
-            person = Person.objects.get(pk=pk)
+            person = Person.objects.get(user_id=request.user.id)
             if 'phone' not in request.data:
                 raise Person.DoesNotExist
             loved_one = Person.objects.get(
