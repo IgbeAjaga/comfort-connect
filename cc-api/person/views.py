@@ -69,12 +69,13 @@ class PersonConnectView(APIView):
             person = Person.objects.get(user_id=request.user.id)
             if 'phone' not in request.data:
                 raise Person.DoesNotExist
-            loved_one = Person.objects.get(
+            loved_one = Person.objects.filter(
                 phone=request.data['phone'],
                 user__first_name=request.data['first_name'],
                 user__last_name=request.data['last_name']
             )
-            person.loved_ones.add(loved_one)
+            for x in loved_one:
+                person.loved_ones.add(x)
             person.save()
             return Response(status=status.HTTP_200_OK)
         except Person.DoesNotExist:
