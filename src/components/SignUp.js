@@ -75,7 +75,7 @@ function SignUp() {
           {
             method: 'POST',
             headers: {
-              'Authorization': 'Token 58c2a6abe77fbb6033b0c07dd015d67727ea4dfc',
+              'Authorization': 'Token c4ec6c6a3a7ba4fd68da05cc83dcd747c000e772',
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(person)
