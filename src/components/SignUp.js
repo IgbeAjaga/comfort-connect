@@ -16,6 +16,7 @@ function SignUp() {
     height: '',
     complexion: '',
     maritalStatus: '',
+    hobby: ''
   });
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -34,31 +35,63 @@ function SignUp() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Simulate a delay to mimic registration process
-    setTimeout(() => {
-      // Update the success message and clear form data
-      setSuccessMessage('Thank you for Signing up!!!');
-      setFormData({
-        step: 1,
-        email: '',
-        username: '',
-        password: '',
-        confirmPassword: '',
-        firstName: '',
-        lastName: '',
-        height: '',
-        complexion: '',
-        phone: '',
-        maritalStatus: '',
-        hobby: '',
-      });
-    }, 2000);
+    // setTimeout(() => {
+    //   // Update the success message and clear form data
+    //   setSuccessMessage('Thank you for Signing up!!!');
+    //   setFormData({
+    //     step: 1,
+    //     email: '',
+    //     username: '',
+    //     password: '',
+    //     confirmPassword: '',
+    //     firstName: '',
+    //     lastName: '',
+    //     height: '',
+    //     complexion: '',
+    //     phone: '',
+    //     maritalStatus: '',
+    //     hobby: '',
+    //   });
+    // }, 2000);
+    const person = {
+      "email": formData.email,
+      "password": formData.password,
+      "first_name": formData.firstName,
+      "last_name": formData.lastName,
+      "height": parseFloat(formData.height),
+      "complexion": formData.complexion,
+      "phone": formData.phone,
+      "marital_status": formData.maritalStatus,
+      "extra": formData.hobby
+    }
 
-    // After successful signup, you can redirect to another page
-    navigate.push('/LoginPage');
+    try {
+      const response = await fetch(
+          'http://54.236.43.172:5000/api/person/',
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': 'Token 58c2a6abe77fbb6033b0c07dd015d67727ea4dfc',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(person)
+          }
+      );
+
+      if (!response.ok) {
+        alert('SignUp went wrong please try again!')
+      } else {
+        setSuccessMessage('Thank you for Signing up!!!');
+        navigate('/');
+      }
+    } catch (error) {
+      alert(error);
+      alert('Something went wrong, fetching the API');
+    }
   };
 
   return (
