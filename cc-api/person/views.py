@@ -31,8 +31,8 @@ class PersonView(APIView):
                     print(person_s.errors)
                     user.delete()
                     raise IntegrityError
-                print(person_s.save())
-                # person = person_s.save()
+                # print(person_s.save())
+                person_s.save()
         except IntegrityError:
             return Response(status=status.HTTP_400_BAD_REQUEST)
         return Response(data={'status': 'OK'}, status=status.HTTP_201_CREATED)
